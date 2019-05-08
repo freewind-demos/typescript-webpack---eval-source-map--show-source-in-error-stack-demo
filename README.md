@@ -1,14 +1,17 @@
-Webpack Config File in TypeScript Demo
-======================================
+TypeScript Webpack "eval-source-map" Show Source in Error Stack Demo
+=====================================================================
 
-Use typescript to write webpack config file.
-
-基本上跟js版没什么区别，只要webpack加上`--config-register ts-node/register`即可。
-
-注意：也可以不用加`--config-register ts-node/register`，但是必须安装`ts-node`，否则处理不了。似乎webpack会自己找ts-node。
+当把webpack的`devtool`设为`eval-source-map`，生成的bundle代码中将包含最详细的源代码信息。
 
 ```
 npm install
-npm run webpack
-npm run webpack-dev-server
+npm run demo
+```
+
+```
+Error: my-error
+    at hello (webpack-internal:///./entry.ts:4:11)
+    at eval (webpack-internal:///./entry.ts:6:1)
+    at Object../entry.ts (/dev/typescript-webpack---eval-source-map--show-source-in-error-stack-demo/dist/bundle.js:97:1)
+    at __webpack_require__ (/dev/typescript-webpack---eval-source-map--show-source-in-error-stack-demo/dist/bundle.js:20:30)
 ```

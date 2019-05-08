@@ -1,3 +1,6 @@
-require('./index.css')
+function hello(name: string) {
+  console.log(`Hello, ${name}!`);
+  throw new Error('my-error');
+}
 
-document.write('The body should have a yellow background color now')
+hello('webpack');
